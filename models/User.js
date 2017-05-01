@@ -10,5 +10,5 @@ var UserSchema = new Schema({
   }
 })
 
-var User = mongoose.model('Users', UserSchema)
+var User = mongoose.model('Express-Users', UserSchema)
 module.exports = User

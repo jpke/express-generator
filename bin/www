@@ -9,8 +9,8 @@ var debug = require('debug')('generatorapp:server');
 var http = require('http');
 var mongoose = require('mongoose');
 
+/* allow node to see variables defined in .env file */
 require("dotenv").config({silent: true});
-// var DATABASE_URI = process.env.DB_URI;
 
 /**
  * Get port from environment and store in Express.
