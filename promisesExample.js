@@ -1,6 +1,6 @@
 /* Promise demo */
 
-let demoPromise = new Promise((resolve, reject) => {
+new Promise((resolve, reject) => {
   setTimeout(function() {
     resolve("Promise has been resolved");
   }, 5000);
