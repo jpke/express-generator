@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/User');
 var jsonParser = require('body-parser').json();
+var fs = require('fs');
+var path = require('path');
 
 let someObject = {
   name: 'JPE',
@@ -12,6 +14,13 @@ let someObject = {
 router.get('/', function(req, res) {
   User.find({}).exec()
   .then(function(users) {
+    fs.writeFile(path.join(__dirname, "/../userRecords"), users, function(err) {
+        if(err) {
+          console.log("error: ", err);
+        } else {
+          console.log("The file was saved!");
+        }
+    }); 
     res.send(users);
   })
   .catch(function(err) {
